@@ -31,10 +31,16 @@ h2{font-size:1.4rem;margin:0 0 16px}
 .tl span{color:var(--muted);font-size:.92rem}
 .note{background:var(--card);border-left:4px solid var(--accent);padding:14px 18px;border-radius:8px}
 footer{padding:28px 0 48px;color:var(--muted);font-size:.9rem}
+.view{display:none}.view.on{display:block}
+.back{display:inline-block;margin:28px 0 0;color:var(--accent);text-decoration:none;font-weight:600}
+.week{color:var(--accent);font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin:0 0 4px}
+.proof{margin-top:10px;padding:8px 10px;border:1px dashed var(--line);border-radius:8px;color:var(--muted);font-size:.85rem}
+.card ul{margin:8px 0 0;padding-left:18px;color:var(--muted);font-size:.93rem}
 </style>
 </head>
 <body>
 <div class="wrap">
+<div class="view on" id="v-accueil">
 <header>
   <h1>Gabriel Binet</h1>
   <p class="sub">Étudiant en 2<sup>e</sup> année de BTS SIO · réseaux &amp; cybersécurité</p>
@@ -86,6 +92,11 @@ footer{padding:28px 0 48px;color:var(--muted);font-size:.9rem}
   </ul>
 </section>
 
+<section id="stage-midas-resume">
+  <h2>Stage au Garage Midas Béthune</h2>
+  <p>Cinq semaines de découverte d’un système d’information en entreprise : réseau, pare-feu et antivirus Trend Micro, stratégies de sécurité, support, logiciel métier et veille CERT-FR. Le détail, semaine par semaine, est sur une page dédiée.</p>
+  <a class="btn" href="#stage-midas">Lire la page du stage</a>
+</section>
 <section id="competences">
   <h2>Compétences</h2>
   <div class="grid">
@@ -94,8 +105,50 @@ footer{padding:28px 0 48px;color:var(--muted);font-size:.9rem}
     <div class="card"><h3>Divers</h3><p>Permis B · Voyages, cinéma, sport, musique</p></div>
   </div>
 </section>
+</div>
+<div class="view" id="v-stage">
+  <a class="back" href="#accueil">← Retour à l’accueil</a>
+  <header style="padding-top:20px">
+    <h1>Stage au Garage Midas Béthune</h1>
+    <p class="sub">Du 25 mai au 26 juin 2026 · stage de 1<sup>re</sup> année de BTS SIO</p>
+  </header>
+  <section>
+    <h2>Contexte</h2>
+    <p>J’ai effectué ce stage au sein du Garage Midas de Béthune, un centre auto qui s’appuie sur un système d’information complet : poste de travail, réseau, outils de sécurité, logiciel métier, matériel d’accueil. Au fil des semaines, j’ai pu observer et prendre part à l’exploitation de cette infrastructure, avec une attention particulière portée à la sécurité. Cette page reprend mes fiches de suivi de stage, classées par semaine.</p>
+    <div class="note"><b>Veille :</b> contrôle régulier des nouvelles alertes de sécurité sur le site du CERT-FR tout au long du stage.</div>
+  </section>
+  <section>
+    <p class="week">Semaine 1 · 25 au 29 mai</p><h2>Découverte de l’environnement et de la sécurité</h2>
+    <div class="grid"><div class="card"><h3>Poste de travail et réseau</h3><ul><li>Présentation de l’environnement, du poste et des logiciels</li><li>Étude de la configuration réseau et des services en place (DHCP, serveur web)</li><li>Configuration avancée du poste : composants, type de connexion, bail DHCP client</li><li>Contrôle du bon fonctionnement des disques SSD</li></ul><span class="tag">DHCP</span><span class="tag">Réseau</span><span class="tag">SSD</span><div class="proof">Preuve à ajouter : capture de la configuration IP / du bail DHCP</div></div><div class="card"><h3>Sécurité et stratégies</h3><ul><li>Contrôle de la politique de mots de passe (utilisateurs et groupes : changement, expiration, désactivation)</li><li>Contrôle et modification des stratégies de sécurité locales et des stratégies d’audit</li><li>Correction de la table de routage d’un pare-feu à inspection d’état</li></ul><span class="tag">Windows</span><span class="tag">Audit</span><span class="tag">Pare-feu</span><div class="proof">Preuve à ajouter : capture des stratégies de sécurité / de la table de routage</div></div><div class="card"><h3>Antivirus, pare-feu et veille</h3><ul><li>Connexion aux interfaces pare-feu et antivirus Trend Micro, étude des journaux d’événements et des règles</li><li>Consultation régulière des alertes du CERT-FR</li></ul><span class="tag">Trend Micro</span><span class="tag">CERT-FR</span><div class="proof">Preuve à ajouter : capture d’un journal d’événements (anonymisée), fiche de veille CERT-FR</div></div></div>
+  </section>
+  <section>
+    <p class="week">Semaine 2 · 1<sup>er</sup> au 5 juin</p><h2>Support, outils métier et protection</h2>
+    <div class="grid"><div class="card"><h3>Support et outils métier</h3><ul><li>Vérification de la configuration des actifs (imprimantes, téléphones, tablettes)</li><li>Prise en main du logiciel de ticketing : interventions de test puis vraies demandes</li><li>Calculs et règles de classement de devis sur e-midas</li></ul><span class="tag">Ticketing</span><span class="tag">e-midas</span><div class="proof">Preuve à ajouter : capture du ticketing (données anonymisées)</div></div><div class="card"><h3>Protection contre les menaces</h3><ul><li>Découverte du système Trend Micro TippingPoint 8400</li><li>Intégration d’un dispositif IPS et de la solution Deep Discovery Advanced Threat Protection</li><li>Théorie des types de détection : signatures, anomalies, stratégies, réputation</li><li>Découverte du SOC de Midas via le Datahub et échange avec le tuteur sur son rôle</li></ul><span class="tag">IPS</span><span class="tag">SOC</span><span class="tag">Trend Micro</span><div class="proof">Preuve à ajouter : capture de l’interface de supervision (anonymisée)</div></div><div class="card"><h3>Administration à distance et performances</h3><ul><li>Prise en main de TeamViewer pour configurer à distance une flotte d’actifs</li><li>Benchmark (tests de performances) du logiciel e-midas</li></ul><span class="tag">TeamViewer</span><span class="tag">Benchmark</span><div class="proof">Preuve à ajouter : capture TeamViewer, résultats du benchmark</div></div></div>
+  </section>
+  <section>
+    <p class="week">Semaine 3 · 8 au 12 juin</p><h2>Matériel, logiciel Midas et stock</h2>
+    <div class="grid"><div class="card"><h3>Déploiement de matériel</h3><ul><li>Mise en service d’une imprimante Epson WF-C579R, scanner compris</li><li>Configuration des tablettes de signature STU-520 sur les postes de l’accueil</li><li>Installation du logiciel de signature électronique Wacom Sign Pro</li><li>Explications du tuteur : documents verrouillés après signature et protégés par un hachage cryptographique SHA</li></ul><span class="tag">Imprimante</span><span class="tag">Tablettes</span><span class="tag">SHA</span><div class="proof">Preuve à ajouter : photos du matériel, captures de configuration</div></div><div class="card"><h3>Logiciel Midas : pièces, stock, commandes</h3><ul><li>Création de pièces et de prestations non référencées (fabricant, référence, distributeur, prix, marge)</li><li>Entrée en stock des pièces reçues selon leurs codes</li><li>Découverte de l’auto planning pour les rendez-vous de contrôle technique</li><li>Catalogue Servicebox, commandes automatiques EDI, désignation de la main-d’œuvre</li></ul><span class="tag">Midas</span><span class="tag">Servicebox</span><span class="tag">EDI</span><div class="proof">Preuve à ajouter : captures du logiciel (données anonymisées)</div></div><div class="card"><h3>Commandes et stock</h3><ul><li>Contrôle des commandes passées sur Ecat, Exadis et Motorparts</li><li>Contrôle des colis reçus par rapport aux commandes de la semaine précédente</li><li>Réception de commandes puis entrée informatique des pièces</li><li>Rectification d’une mauvaise entrée en stock de pneus</li></ul><span class="tag">Stock</span><span class="tag">Commandes</span><div class="proof">Preuve à ajouter : capture du suivi de commandes (anonymisée)</div></div></div>
+  </section>
+  <section>
+    <p class="week">Semaine 4 · 15 au 19 juin</p><h2>Relation client et gestion de flotte</h2>
+    <div class="grid"><div class="card"><h3>Relation client et facturation</h3><ul><li>Relances client sur des devis estimatifs non acceptés</li><li>Découverte de la prise de rendez-vous en ligne (code VIN, kilométrage, remarques)</li><li>Solution de paiement en plusieurs fois Oneybank, archivage des facturations de mai en armoire sécurisée</li><li>Annonces publicitaires en boucle sur les écrans de l’accueil</li></ul><span class="tag">Clients</span><span class="tag">Facturation</span><div class="proof">Preuve à ajouter : captures de l’interface (anonymisées)</div></div><div class="card"><h3>Diagnostic et gestion de flotte</h3><ul><li>Découverte de Fleethub, solution de gestion de flotte de véhicules</li><li>Utilisation d’une tablette valise pour diagnostiquer l’électronique d’un véhicule</li><li>Fiche technique numérique ediag complétée par le mécanicien</li></ul><span class="tag">Fleethub</span><span class="tag">Diagnostic</span><div class="proof">Preuve à ajouter : captures de Fleethub / ediag (anonymisées)</div></div></div>
+  </section>
+  <section>
+    <p class="week">Semaine 5 · 22 au 26 juin</p><h2>Protocoles et communications</h2>
+    <div class="grid"><div class="card"><h3>Radio TETRA et IHM</h3><ul><li>Découverte de la norme TETRA installée sur le bloc d’alimentation central du bâtiment</li><li>Réseau partagé réservé à un petit groupe, communication chiffrée avec XTEA</li><li>Découverte de la notion d’IHM (interface homme-machine)</li></ul><span class="tag">TETRA</span><span class="tag">XTEA</span><span class="tag">IHM</span><div class="proof">Preuve à ajouter : schéma ou notes du cours du tuteur</div></div><div class="card"><h3>Acronymes et protocoles</h3><ul><li>Codes VIN, HSN, TSN, ESN</li><li>Protocole SSDP, sous-protocole de l’UPnP, sur les appareils sans fil</li><li>Code radio automobile : fonction antivol après changement de batterie</li></ul><span class="tag">SSDP</span><span class="tag">UPnP</span><div class="proof">Preuve à ajouter : fiche de synthèse personnelle</div></div></div>
+  </section>
+</div>
+
 
 <footer>© 2026 Gabriel Binet · <a href="mailto:binetgabriel51@gmail.com" style="color:var(--accent)">binetgabriel51@gmail.com</a> · <a href="https://www.linkedin.com/in/gabriel-binet-401125437/" target="_blank" rel="noopener" style="color:var(--accent)">LinkedIn</a></footer>
 </div>
+<script>
+function route(){var h=(location.hash||"").slice(1),st=h==="stage-midas";
+document.getElementById("v-accueil").className="view"+(st?"":" on");
+document.getElementById("v-stage").className="view"+(st?" on":"");
+var t=(!st&&h)?document.getElementById(h):null;
+if(t){t.scrollIntoView()}else{window.scrollTo(0,0)}}
+window.addEventListener("hashchange",route);route();
+</script>
 </body>
 </html>
